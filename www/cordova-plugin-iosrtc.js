@@ -4052,6 +4052,10 @@ function videoElementsHandler(_mediaStreams, _mediaStreamRenderers) {
 function observeVideo(video) {
 	debug('observeVideo()');
 
+	if (video.src && (video.src === '' || video.src.startsWith('https://'))) {
+		return;
+	}
+
 	// If the video already has a srcObject property but is not yet handled by the plugin
 	// then handle it now.
 	var hasStream = video.srcObject || video.src;
