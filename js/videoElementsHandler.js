@@ -169,7 +169,7 @@ function videoElementsHandler(_mediaStreams, _mediaStreamRenderers) {
 function observeVideo(video) {
 	debug('observeVideo()');
 
-	if (video.src && (video.src === '' || video.src.startsWith('https://'))) {
+	if (video.src && (video.src === '' || video.src.startsWith('https://') || video.src.startsWith('file://'))) {
 		return;
 	}
 
